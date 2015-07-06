@@ -64,9 +64,3 @@ def add_s(arr)
 end
 
 
-
-
-
-
-
->>>>>>> 11f3703b83fbe5fdd48a07b3035cb1c90b88f84d
