@@ -1,99 +1,72 @@
-def count_words(story)
-  hash = Hash.new(0)
-  story.split(" ").each do |word|
-    hash[word] += 1
-  end
-  hash
+def sort_array_asc(arr)
+	arr.sort
 end
 
-def kesha_maker(array)
-  container = []
-  array.each do |element|
-    changed_word = element
-    changed_word[2] = "$"
-    container << changed_word
-  end
-  container
+def sort_array_desc(arr)
+	arr.sort do |a, b|
+		b <=> a
+	end
 end
 
-def reverse_array(array)
-  array.reverse
+def swap_elements(arr)
+	third = arr[2]
+	second = arr[1]
+	arr[1] = third
+	arr[2] = second
+	arr
 end
 
-def sort_array_asc(array)
-  array.sort
+def reverse_array(arr)
+	arr.reverse
 end
 
-def sort_array_desc(array)
-  array.sort {|x,y| y <=> x}
+def kesha_maker(arr)
+	keshafied = []
+	arr.each do |word|
+		word[2] = "$"
+		keshafied << word
+	end
+	keshafied
 end
 
-def find_a(array)
-  container = []
-  array.each do |element|
-    container << element if element[0] == "a"
-  end
-  container
+def find_a(arr)
+	arr.select {|word| word[0] == "a"}
+
+	# or arr.select {|word| word.start_with?("a")}
 end
 
-def add_s(array)
-  container = []
-  array.each_with_index do |element, index|
-    if index == 1
-      container << element
-    else
-      container << element + "s"
-    end
-  end
-  container
+
+def sum_array(arr)
+	sum = 0
+	arr.each do |num|
+		sum += num
+	end
+	sum 
 end
 
-def swap_elements(array)
-  new_array = []
-  new_array[2] = array[1]
-  new_array[1] = array[2]
-  new_array[0] = array[0]
-  new_array
+def add_s(arr)
+	arr.collect do |word|
+		if arr[1] == word
+			word
+		else
+			word + "s" 
+		end
+	end
+
+	# or 
+	# arr.each_with_index.map do |word, i|
+	# 	if i == 1
+	# 		word
+	# 	else
+	# 		word + "s"
+	# 	end
+	# end
 end
 
-def find_winners(winner_list)
-  container = []
-  winner_list.each do |key, value|
-    if value == "winner"
-      container << key
-    end
-  end
-  container
-end
 
-def greater_and_less_than_10(array)
-  answer = {"less_than_10" => [], "greater_than_10" => []}
-  array.each do |element|
-    if element > 10
-      answer["greater_than_10"] << element
-    elsif element < 10
-      answer["less_than_10"] << element
-    end
-  end
-  answer
-end
 
-def sum_array(array)
-  sum = 0
-  array.each do |element|
-    sum = sum + element
-  end
-  sum
-end
 
-def organize_songs_by_artist(songs)
-  organized_songs = {}
-  songs.each do |song|
-    split_songs = song.split(" - ")
-    artist = split_songs[0]
-    song = split_songs[1]
-    organized_songs[artist] = [] unless organized_songs[artist]
-    organized_songs[artist] << song
-  end
-  organized_songs
-end
+
+
+
+>>>>>>> 11f3703b83fbe5fdd48a07b3035cb1c90b88f84d
