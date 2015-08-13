@@ -1,8 +1,7 @@
 # Guide to Solving and Reviewing Collections Practice
 
 ### `#sort_array_asc`
-
-When passed in an array this method should return an array sorted in ascending order.
+When passed an array this method should return another array with the elements sorted in ascending order. We can use Ruby's built in `sort` method to do this.
 
 ```ruby
 def sort_array_asc(array)
@@ -11,8 +10,7 @@ end
 ```
 
 ### `#sort_array_desc`
-
-This method should return an array sorted in descending order.
+This method should return an array sorted in descending order. Because the default behavior of `sort` is to arrange the elements in ascending order, in order to customize its behavior we can pass a block to `sort` and use the `<=>` (spaceship) operator.
 
 ```ruby
 def sort_array_desc(array)
@@ -23,28 +21,27 @@ end
 ```
 
 ### `#swap_elements`
-For this methods tests to pass we need to swap the second and third elements of an array. First we will create two variables, there going to be equal to the second and third element in out array.
+For this method's tests to pass we need to swap the second and third elements of an array. First we will create a variable to hold one of the values that we are swapping. Let's just set it equal to the first element that we are swapping, the one at `array[1]`.
 
 ```ruby
-third = array[2]
-second = array[1]
+swap = array[1]
 ```
-Then we need to tell our array your element with the index of 1 (which is our second element in our array) is equal to the `third` variable and our element with the index of 2 is equal to the `second` variable.
+Then we need to tell our array that the element with the index of 1 (which is the second element in the array) is equal to the value of the third element (at `array[2]`). Finally, we set the value of `array[2]` equal to the value of the `swap` variable.
 
 Your method should look like this:
 
 ```ruby
 def swap_elements(array)
-  third = array[2]
-  second = array[1]
-  array[1] = third
-  array[2] = second
+  swap = array[1]
+  array[1] = array[2]
+  array[2] = swap
+  
   array
 end
 ```
 
 ### `#reverse_array`
-We will use the `.reverse` method to return the passed in array reversed.
+We will use Ruby's built in `.reverse` method to return the passed in array reversed.
 
 ```ruby
 def reverse_array(array)
@@ -53,12 +50,11 @@ end
 ```
 
 ### `#kesha_maker`
-
-The `kesha_maker` method will take in an array and change the third element of every word in that array with a `$`. The instruction for this method is to use a lower level iterator like `.each` and not `.collect` and `.map`.
+The `kesha_maker` method will take in an array and change the third element of every word in that array with a `$`. The instructions for this method tell us to use a lower level iterator like `.each` and not `.collect` or `.map`.
 
 **Remember:** The `.each` method returns the original array that was passed in, but our method should return a new array with the changes we made to the words.
 
-To do so we first need to initialize an empty array, push our changes into that array and return that array. Your method should look like this:
+To do this we first need to initialize an empty array, then push our changes into that array and return that array. Your method should look like this:
 
 ```ruby
 def kesha_maker(array)
@@ -72,9 +68,9 @@ end
 ```
 
 ### ` #find_a`
-To find all the words in our array that starts with an `a`, we will iterate over the array with `.select`. The return value of this `.select` method is a new array with all the words that starts with an `a`. 
+To find all the words in our array that start with an `a`, we will iterate over the array with `.select`. The return value of this `.select` method is a new array with all the words that start with an `a`. 
 
-**TIP:** The `.find` method only returns the first element that starts with an `a`. So we want to use the `.select` here.	
+**TIP:** The `.find` method only returns the first element that starts with an `a`. So we want to use the `.select` method here.	
 
 ```ruby
 def find_a(array)
@@ -84,7 +80,7 @@ end
 
 ### `#sum_array`
 
-The return value of this method should be a sum of all the numbers that are getting passed in. First we will set our `sum = 0`, then we can iterate over our array and add the number to our sum and at the end we also have to return the sum. 
+The return value of this method should be the sum of all the numbers that are passed in. First we will set our `sum = 0`, then we can iterate over the array and add each number to our sum. At the end we also have to return the sum. 
 
 ```ruby
 def sum_array(array)
@@ -97,7 +93,7 @@ end
 ```
 
 **Advanced:**
-We can also use the `.inject` method and just write one line of code.
+We can also use the `.inject` method and get the sum with just one line of code.
 
 ```ruby
 def sum_array(array)
@@ -106,8 +102,7 @@ end
 ```
 
 ### `#add_s`
-
-This method will add a 	`s` to every word, except the second element in our array. We are using `.collect` here to iterate over our array, because we want our method to return us the modified array.
+This method will add a 	`s` to every word, except the second element in the array. We are using `.collect` here to iterate over the array, because we want our method to return us the modified array.
 
 ```ruby
 def add_s(array)
@@ -122,7 +117,3 @@ end
 ```
 
 All your tests should be passing!
-
-
-
-
