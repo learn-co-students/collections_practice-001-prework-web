@@ -8,12 +8,12 @@ def sort_array_desc(arr)
 	end
 end
 
-def swap_elements(arr)
-	third = arr[2]
-	second = arr[1]
-	arr[1] = third
-	arr[2] = second
-	arr
+def swap_elements(array)
+  swap = array[1]
+  array[1] = array[2]
+  array[2] = swap
+  
+  array
 end
 
 def reverse_array(arr)
