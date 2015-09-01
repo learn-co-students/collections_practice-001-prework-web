@@ -23,6 +23,13 @@ describe 'collections practice' do
     end
   end
 
+  describe '#swap_elements_at' do
+    it 'swaps elements a and b in an array' do
+      expect(swap_elements_at(["a", "b", "c", "d"], 0, 2)).to eq(["c", "b", "a", "d"])
+    end
+  end
+  
+
   # Question 4
   describe '#reverse_array' do
     it 'reverse the order of an array' do
