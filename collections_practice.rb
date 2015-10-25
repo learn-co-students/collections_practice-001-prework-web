@@ -22,10 +22,11 @@ def swap_elements(array)
 end
 
 def reverse_array(array)
-  index = 0
-  array.length.times do
+ # index = 0
+  #array.length.times do
+  array.each_with_index do |num,index|
     array.insert(index,array.pop)
-    index +=1
+    #index +=1
   end
   array
 end
