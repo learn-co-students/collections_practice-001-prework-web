@@ -7,21 +7,15 @@ def sort_array_desc(array)
 end
 
 def swap_elements(array)
-  third_element = array.delete_at(2)
-  array.insert(1, third_element)
+  array.insert(1, array.delete_at(2))
 end
 
 def reverse_array(array)
-  array = array.reverse
+  array.reverse
 end
 
 def kesha_maker(array)
-  new_array = []
-  array.each do |string|
-    string[2] = "$"
-    new_array << string
-  end
-  new_array
+  array.collect { |string| string[2] = "$"; string }
 end
 
 def find_a(array)
@@ -35,9 +29,5 @@ def sum_array(array)
 end
 
 def add_s(array)
-  array.each do |word|
-    unless word == array[1]
-      word << "s"
-    end
-  end
+  array.each { |word| word << "s" unless word == array[1] }
 end
