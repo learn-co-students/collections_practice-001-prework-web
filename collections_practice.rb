@@ -42,6 +42,6 @@ def add_s(array)
   array.each do |item|
     item << "s" unless item == array[1]
     newArray << item
-  
+
   end
-end
+  
